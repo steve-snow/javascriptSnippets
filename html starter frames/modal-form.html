@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- #region Sabio Code - You can Fold this region to remove it from sight -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Sabio Coding Bootcamp" />
+    <meta itemprop="image" content="https://sabio.la/Sabio.png">
+    <link rel="shortcut icon" href="https://sabio.la/Sabio.png">
+    <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
+    <!-- Do Not Change the HTML title or anything between this line and the line with the 💘's -->
+    <title>Modal Form Build Test</title>
+    <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
+    <script src="https://pw.sabio.la/api/js/site"></script>
+    <script src="https://unpkg.com/axios@0.19.2/dist/axios.min.js"></script>
+
+    <!-- #endregion -->
+    <!-- I 💘 Code, You 💘 Code, We all 💘 Code -->
+
+    <!-- 💡 All your CSS in here -->
+    <style>
+
+    </style>
+</head>
+
+<body class="sabio" data-ins="pw-00">
+    <!-- Do Not Edit or Remove this nav element -->
+    <nav class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tailFormModal">
+            Launch modal
+        </button>
+    </nav>
+
+    
+    <main role="main" class="graph-container align-middle d-flex justify-content-center" style="height:100%"
+        id="objGraph">
+    </main>
+
+    <div class="modal-body">
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="tailFormModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="tailFormLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tailFormLabel">Tail Number Entry</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="tailNumberLoading">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-8">.col-md-8</div>
+                                <div class="col-md-4 ml-auto">.col-md-4 .ml-auto</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">.col-md-4</div>
+                                <div class="col-md-8 ml-auto">.col-md-8 .ml-auto</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="tailFormLastName"
+                                        name="tailFormLastName" placeholder="First name">
+                                </div>
+                                <div class="col-md-6 ml-auto">
+                                    <input type="text" class="form-control" id="tailFormFirstName"
+                                        name="tailFormFirstName" placeholder="Last name">
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        id="btnTailFormCancel">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="btnTailFormSubmit">Submit Tail Number</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Do Not Edit or Remove this footer element -->
+    <footer class="do-not-remove container-fluid footer mx-auto  fb-targert sabio">
+        <p class="text-center">© Sabio.la 2019</p>
+    </footer>
+
+    <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻 -->
+    <script id="candidateCode">
+
+        function startUp() {
+            wiredUpEventHandlers();
+        }
+
+        function wiredUpEventHandlers() {
+            $("#btnTailFormSubmit").on("click", onTailFormSubmit);
+        }
+
+        function onTailFormSubmit(e) {
+            getTailFormData();
+            // check form validity
+            $('#tailFormModal').modal('hide');
+
+            // send data to endpoint
+            // fire loading modal
+            // if successful clear form, else query user for next step
+            // either attempt to send form again, or drop data
+            document.getElementById("tailNumberLoading").reset();
+        }
+
+        function getTailFormData(formToDigest) {
+            console.log("... getTailFormData :: digesting form: ", formToDigest);
+            console.log($("#tailFormLastName").val(), $("#tailFormFirstName").val());
+        }
+
+        function launchModal() {
+            $('#tailFormModal').modal();
+            return "launched modal";
+        }
+
+    </script>
+    <!-- 🛑 Do Not Write Any Code Below here -->
+</body>
+
+</html>
