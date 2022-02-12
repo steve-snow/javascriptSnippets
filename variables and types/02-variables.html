@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Variables - Foundations</title>
+</head>
+
+<body>
+    <!-- Order drives location on page, but not necessarily execution order-->
+
+    <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻 -->
+    <script id="candidateCode">
+
+        var message = " You can double quote";
+        var info = 'Single quotes also';
+        var backTick = `this is a backtick`;
+
+        var age = 20, count = 10, size = 11,
+            sport = "football";
+
+
+        const MY_OBJECT = { 'key': 'value' };
+
+        // Attempting to overwrite the object throws an error
+        // Uncaught TypeError: Assignment to constant variable.
+        // MY_OBJECT = { 'OTHER_KEY': 'value' };
+
+        // However, object keys are not protected,
+        // so the following statement is executed without problem
+        MY_OBJECT.key = 'otherValue'; // Use Object.freeze() to make object immutable
+
+        // The same applies to arrays
+        const MY_ARRAY = [];
+        // It's possible to push items into the array
+        MY_ARRAY.push('A'); // ["A"]
+        // However, assigning a new array to the variable throws an error 
+        // Uncaught TypeError: Assignment to constant variable.
+        MY_ARRAY = ['B'];
+
+    </script>
+    <!-- 🛑 Do Not Write Any Code Below here-- >
+
+</body >
+
+</html >
